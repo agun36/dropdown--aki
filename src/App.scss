@@ -218,14 +218,14 @@ nav {
       padding: 1.4rem 8rem;
       background: none;
       color: $color-Gray;
-      @media screen and (max-width: 47.9rem) {
+      @media screen and (max-width: 479px) {
         padding: 1.4rem 4rem;
       }
-      @media screen and (max-width: 35rem) {
+      @media screen and (max-width: 350px) {
         padding: 1.4rem 2rem;
       }
     }
-    @media screen and (max-width: 60rem) {
+    @media screen and (max-width: 600px) {
       margin-top: 3.5rem;
       margin-right: 30rem;
     }
