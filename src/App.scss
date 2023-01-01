@@ -1,0 +1,328 @@
+@import './assets/styles/variables.scss';
+
+:root {
+  --color-offWhite: hsl(0, 0%, 98%);
+  --color-White: #fff;
+  --color-Gray: hsl(0, 0%, 41%);
+  --color-Black: hsl(0, 0%, 8%);
+  --font-weight: 500;
+  --font-weight2: 700;
+  --font-size: 2rem;
+  --font-size2: 0.9rem;
+  --font-size-mobile: 3rem;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  @media (max-width: 900px) {
+    font-size: 59.5%;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 55.5%;
+    overflow: scroll;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #9d9d9d;
+  border-radius: 5rem;
+}
+
+body {
+  font-family: $snap_font;
+  color: $color-Gray;
+  background: var(--color-offWhite);
+  overflow-x: hidden;
+}
+
+.container {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 700px) {
+    // padding: 3rsem;
+    overflow: hidden;
+    // width: 100%;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+nav {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .nav-logo {
+    font-size: 3rem;
+    color: $color-Black;
+    font-weight: 800;
+    margin-right: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    column-gap: 2rem;
+
+    align-items: center;
+    //continue
+    font-size: 1.4rem;
+    .text-link {
+      color: $color-Gray;
+    }
+    .dropdown {
+      position: relative;
+      .dropdown-menu {
+        list-style: none;
+        background: var(--color-White);
+        line-height: 3rem;
+        padding: 0.8rem;
+        border-radius: 1.4rem;
+        position: absolute;
+        width: 14rem;
+        .dropdown-item {
+          display: flex;
+          align-items: center;
+          column-gap: 1.5rem;
+          img {
+            width: 1rem;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .nav-btns {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    .login-btn {
+      font-size: 1.4rem;
+      color: $color-Gray;
+      background: none;
+    }
+    .reg-btn {
+      font-size: 1.4rem;
+      color: $color-Gray;
+      background: none;
+      padding: 1.4rem 2.5rem;
+      border-radius: 3rem;
+      border: 1px solid $color-Gray;
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .menu-icon {
+    display: none;
+    @media screen and (max-width: 600px) {
+      display: block;
+      position: absolute;
+      right: 0;
+      margin-right: 4rem;
+    }
+  }
+}
+
+.mobile-nav {
+  width: 0;
+  background-color: var(--color-White);
+  position: fixed;
+  overflow: hidden;
+  transform: translateX(-100%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  list-style: none;
+  line-height: 3;
+  // height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  transition: all ease-in-out 0.5s;
+  @media (max-width: 600px) {
+    .nav-link-mobile {
+      padding-top: 8rem;
+      padding-left: 3rem;
+      @media screen and (max-width: 350px) {
+        padding-left: 2rem;
+      }
+    }
+    &.open {
+      width: 100%;
+      transform: translateX(50%);
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .text-link {
+      color: $color-Gray;
+    }
+    .dropdown-item,
+    ul {
+      list-style: none;
+    }
+  }
+}
+.nav-link-mobile {
+  .nav-link-mobile a {
+    text-decoration: none;
+    color: $color-Gray;
+  }
+  font-size: 1.4rem;
+  .dropdown-mobile {
+    color: $color-Gray;
+    width: 100%;
+  }
+  .nav-btns-mobile {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    .login-btn-mobile {
+      background: none;
+      color: $color-Gray;
+    }
+    .reg-btn-mobile {
+      border: 0.1rem solid $color-Gray;
+      border-radius: 1rem;
+      padding: 1.4rem 8rem;
+      background: none;
+      color: $color-Gray;
+      @media screen and (max-width: 47.9rem) {
+        padding: 1.4rem 4rem;
+      }
+      @media screen and (max-width: 35rem) {
+        padding: 1.4rem 2rem;
+      }
+    }
+    @media screen and (max-width: 60rem) {
+      margin-top: 3.5rem;
+      margin-right: 30rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin-right: 20rem;
+    }
+    @media screen and (max-width: 350px) {
+      margin-right: 13.5rem;
+    }
+  }
+}
+
+.banner {
+  display: flex;
+  max-width: 1000px;
+  gap: 6rem;
+  margin: 7rem auto;
+  justify-content: center;
+  align-items: center;
+  .banner-img-container {
+    width: 50%;
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+  .banner-container_text {
+    margin-top: auto;
+
+    .title {
+      font-weight: 700;
+      font-size: 7rem;
+
+      width: 100%;
+      color: $color-Black;
+      font-family: 'Epilogue', sans-serif;
+      margin-bottom: 3rem;
+      .subTest {
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        font-size: 5rem;
+        text-align: center;
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 4rem;
+        text-align: center;
+      }
+      @media screen and (max-width: 467px) {
+        font-size: 3rem;
+        text-align: center;
+      }
+      @media screen and (max-width: 350px) {
+        font-size: 2rem;
+        text-align: center;
+      }
+      @media screen and (max-width: 200px) {
+        font-size: 1.9rem;
+      }
+    }
+
+    .hero-text {
+      margin-bottom: 3rem;
+      color: var(--color-Gray);
+      font-size: 2rem;
+      @media screen and (max-width: 600px) {
+        text-align: center;
+        font-size: 1.3rem;
+        // width: 60vw;
+      }
+    }
+    .hero-btn {
+      display: flex;
+      .banner-btn {
+        padding: 1.4rem 4rem;
+        font-size: 1.4rem;
+        color: var(--color-White);
+        background: var(--color-Black);
+        border-radius: 1rem;
+      }
+      @media screen and (max-width: 600px) {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .clients {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-top: 3rem;
+    gap: 1.6rem;
+    .clients img {
+      width: 100%;
+      object-fit: contain;
+   
