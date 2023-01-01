@@ -33,85 +33,90 @@ const Navbar = () => {
   }
 
   return (
-    <nav>
-      <div className='d-flex'>
-        <div className='nav-logo'>snap</div>
-        <div className='nav-links'>
-          <div
-            className='dropdown'
-            onMouseEnter={handleDropDownOpen}
-            onMouseLeave={handleDropDownClose}
-          >
-            <div className='icon-dropdown text-link' onClick={handleToggle}>
-              Features
+    <>
+      <nav>
+        <div className='d-flex'>
+          <div className='nav-logo'>snap</div>
+          <div className='nav-links'>
+            <div
+              className='dropdown'
+              onMouseEnter={handleDropDownOpen}
+              onMouseLeave={handleDropDownClose}
+            >
+              <div className='icon-dropdown text-link' onClick={handleToggle}>
+                Features
+                {open ? (
+                  <img src={iconArrow} alt='' />
+                ) : (
+                  <img src={iconArrowDown} alt='' />
+                )}
+              </div>
               {open ? (
-                <img src={iconArrow} alt='' />
-              ) : (
-                <img src={iconArrowDown} alt='' />
-              )}
+                <ul className='dropdown-menu' onMouseEnter={handleDropDownOpen}>
+                  <li className='dropdown-item'>
+                    <img src={todo} alt='' /> Todo List
+                  </li>
+                  <li className='dropdown-item'>
+                    <img src={calender} alt='' /> Calender
+                  </li>
+                  <li className='dropdown-item'>
+                    <img src={reminder} alt='' /> Reminders
+                  </li>
+                  <li className='dropdown-item'>
+                    <img src={planning} alt='' /> Planning
+                  </li>
+                </ul>
+              ) : null}
             </div>
-            {open ? (
-              <ul className='dropdown-menu' onMouseEnter={handleDropDownOpen}>
-                <li className='dropdown-item'>
-                  <img src={todo} alt='' /> Todo List
-                </li>
-                <li className='dropdown-item'>
-                  <img src={calender} alt='' /> Calender
-                </li>
-                <li className='dropdown-item'>
-                  <img src={reminder} alt='' /> Reminders
-                </li>
-                <li className='dropdown-item'>
-                  <img src={planning} alt='' /> Planning
-                </li>
-              </ul>
-            ) : null}
-          </div>
-          <div
-            className='dropdown'
-            onMouseEnter={handleDropDownOpen2}
-            onMouseLeave={handleDropDownClose2}
-          >
-            <div className='icon-dropdown text-link' onClick={handleToggle}>
-              Company
+            <div
+              className='dropdown'
+              onMouseEnter={handleDropDownOpen2}
+              onMouseLeave={handleDropDownClose2}
+            >
+              <div className='icon-dropdown text-link' onClick={handleToggle}>
+                Company
+                {open2 ? (
+                  <img src={iconArrow} alt='' />
+                ) : (
+                  <img src={iconArrowDown} alt='' />
+                )}
+              </div>
               {open2 ? (
-                <img src={iconArrow} alt='' />
-              ) : (
-                <img src={iconArrowDown} alt='' />
-              )}
+                <ul
+                  className='dropdown-menu'
+                  onMouseEnter={handleDropDownOpen2}
+                >
+                  <li className='dropdown-item'>History</li>
+                  <li className='dropdown-item'>Our Team</li>
+                  <li className='dropdown-item'>Our Blog</li>
+                </ul>
+              ) : null}
             </div>
-            {open2 ? (
-              <ul className='dropdown-menu' onMouseEnter={handleDropDownOpen2}>
-                <li className='dropdown-item'>History</li>
-                <li className='dropdown-item'>Our Team</li>
-                <li className='dropdown-item'>Our Blog</li>
-              </ul>
-            ) : null}
+
+            <Link className='text-link' to='/career' onClick={handleToggle}>
+              Careers
+            </Link>
+            <Link className='text-link' to='/about' onClick={handleToggle}>
+              About
+            </Link>
           </div>
-
-          <Link className='text-link' to='/career' onClick={handleToggle}>
-            Careers
-          </Link>
-          <Link className='text-link' to='/about' onClick={handleToggle}>
-            About
-          </Link>
         </div>
-      </div>
 
-      <div className='nav-btns' onClick={handleToggle}>
-        <button className='login-btn'>Login</button>
-        <button className='reg-btn'>Register</button>
-      </div>
+        <div className='nav-btns' onClick={handleToggle}>
+          <button className='login-btn'>Login</button>
+          <button className='reg-btn'>Register</button>
+        </div>
 
+        <div className='menu-icon' onClick={handleToggle}>
+          {navbarOpen ? (
+            <img src={closeIcon} alt='' />
+          ) : (
+            <img src={openIcon} alt='' />
+          )}
+        </div>
+      </nav>
       <MobileNav navBarOpen={navbarOpen} />
-      <div className='menu-icon' onClick={handleToggle}>
-        {navbarOpen ? (
-          <img src={closeIcon} alt='' />
-        ) : (
-          <img src={openIcon} alt='' />
-        )}
-      </div>
-    </nav>
+    </>
   )
 }
 

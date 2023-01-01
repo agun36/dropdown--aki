@@ -30,77 +30,80 @@ export const MobileNav = ({ navBarOpen }) => {
   }
 
   return (
-    <div className={`mobile-nav ${navBarOpen ? 'open' : ''}`}>
-      <div className='nav-link-mobile'>
-        <div
-          className='dropdown-mobile'
-          onMouseEnter={handleDropDownOpen}
-          onMouseLeave={handleDropDownClose}
-        >
-          <div className='icon-dropdown text-link' onClick={handleToggle}>
-            Features
+    <div className='mobile-nav-wrapper'>
+      {navBarOpen && <div className='overlay' />}
+      <div className={`mobile-nav ${navBarOpen ? 'open' : ''}`}>
+        <div className='nav-link-mobile'>
+          <div
+            className='dropdown-mobile'
+            onMouseEnter={handleDropDownOpen}
+            onMouseLeave={handleDropDownClose}
+          >
+            <div className='icon-dropdown text-link' onClick={handleToggle}>
+              Features
+              {open ? (
+                <img src={iconArrow} alt='' />
+              ) : (
+                <img src={iconArrowDown} alt='' />
+              )}
+            </div>
             {open ? (
-              <img src={iconArrow} alt='' />
-            ) : (
-              <img src={iconArrowDown} alt='' />
-            )}
+              <ul
+                className='dropdown-menu dropdown_menu-list'
+                onClick={handleDropDownOpen}
+              >
+                <li className='dropdown-item'>
+                  <img src={todo} alt='' /> Todo List
+                </li>
+                <li className='dropdown-item'>
+                  <img src={calender} alt='' /> Calender
+                </li>
+                <li className='dropdown-item'>
+                  <img src={reminder} alt='' /> Reminders
+                </li>
+                <li className='dropdown-item'>
+                  <img src={planning} alt='' /> Planning
+                </li>
+              </ul>
+            ) : null}
           </div>
-          {open ? (
-            <ul
-              className='dropdown-menu dropdown_menu-list'
-              onClick={handleDropDownOpen}
-            >
-              <li className='dropdown-item'>
-                <img src={todo} alt='' /> Todo List
-              </li>
-              <li className='dropdown-item'>
-                <img src={calender} alt='' /> Calender
-              </li>
-              <li className='dropdown-item'>
-                <img src={reminder} alt='' /> Reminders
-              </li>
-              <li className='dropdown-item'>
-                <img src={planning} alt='' /> Planning
-              </li>
-            </ul>
-          ) : null}
-        </div>
-        <div
-          className='dropdown'
-          onMouseEnter={handleDropDownOpen2}
-          onMouseLeave={handleDropDownClose2}
-        >
-          <div className='icon-dropdown text-link' onClick={handleToggle}>
-            Company
+          <div
+            className='dropdown'
+            onMouseEnter={handleDropDownOpen2}
+            onMouseLeave={handleDropDownClose2}
+          >
+            <div className='icon-dropdown text-link' onClick={handleToggle}>
+              Company
+              {open2 ? (
+                <img src={iconArrow} alt='' />
+              ) : (
+                <img src={iconArrowDown} alt='' />
+              )}
+            </div>
             {open2 ? (
-              <img src={iconArrow} alt='' />
-            ) : (
-              <img src={iconArrowDown} alt='' />
-            )}
+              <ul className='dropdown-menu' onClick={handleDropDownOpen2}>
+                <li className='dropdown-item'>History</li>
+                <li className='dropdown-item'>Our Team</li>
+                <li className='dropdown-item'>Our Blog</li>
+              </ul>
+            ) : null}
           </div>
-          {open2 ? (
-            <ul className='dropdown-menu' onClick={handleDropDownOpen2}>
-              <li className='dropdown-item'>History</li>
-              <li className='dropdown-item'>Our Team</li>
-              <li className='dropdown-item'>Our Blog</li>
-            </ul>
-          ) : null}
-        </div>
-        <ul>
-          <li>
-            <Link className='text-link' to='/career' onClick={handleToggle}>
-              Careers
-            </Link>
-          </li>
-          <li>
-            <Link className='text-link' to='/about' onClick={handleToggle}>
-              About
-            </Link>
-          </li>
-        </ul>
-        <div className='nav-btns-mobile' onClick={handleToggle}>
-          <button className='login-btn-mobile'>Login</button>
-          <button className='reg-btn-mobile'>Register</button>
+          <ul>
+            <li>
+              <Link className='text-link' to='/career' onClick={handleToggle}>
+                Careers
+              </Link>
+            </li>
+            <li>
+              <Link className='text-link' to='/about' onClick={handleToggle}>
+                About
+              </Link>
+            </li>
+          </ul>
+          <div className='nav-btns-mobile' onClick={handleToggle}>
+            <button className='login-btn-mobile'>Login</button>
+            <button className='reg-btn-mobile'>Register</button>
+          </div>
         </div>
       </div>
     </div>

@@ -7,39 +7,31 @@ import client4 from '../assets/images/client-meet.svg'
 
 const Hero = () => {
   return (
-    <div className='main-header'>
-      <section className='banner'>
-        <div className='banner-container_text'>
-          <h1 className='title'>
-            Make <br className='subTest' /> remote work
-          </h1>
-          <p className='hero-text'>
-            Get your team in sync, no matter your location,Streamline processes,
-            create team rituals, and watch productivity soar
-          </p>
-          <div className='hero-btn'>
-            <button className='banner-btn'>Learn more</button>
-          </div>
-          <ul className='clients'>
-            <li>
-              <img src={client} alt='' />
-            </li>
-            <li>
-              <img src={client2} alt='' />
-            </li>
+    <section className='banner container'>
+      <div className='banner-container_text'>
+        <h1 className='title'>
+          Make <br className='subTest' /> remote work
+        </h1>
 
-            <li>
-              <img src={client3} alt='' />
-            </li>
-            <li></li>
-            <img src={client4} alt='' />
-          </ul>
+        <p className='hero-text'>
+          Get your team in sync, no matter your location,Streamline processes,
+          create team rituals, and watch productivity soar
+        </p>
+
+        <div className='hero-btn'>
+          <button className='banner-btn'>Learn more</button>
         </div>
-        <div className='banner-img-container'>
-          <img src={desktop} alt='' />
+        <div className='clients'>
+          <img src={client} alt='' className='audio-file' />
+          <img src={client2} alt='' />
+          <img src={client3} alt='' />
+          <img src={client4} alt='' />
         </div>
-      </section>
-    </div>
+      </div>
+      <div className='banner-img-container'>
+        <img src={desktop} alt='' />
+      </div>
+    </section>
   )
 }
 
