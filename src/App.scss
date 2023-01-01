@@ -260,7 +260,6 @@ nav {
   }
   .banner-container_text {
     margin-top: auto;
-
     .title {
       font-weight: 700;
       font-size: 7rem;
@@ -296,6 +295,9 @@ nav {
     }
 
     .hero-text {
+      display: flex;
+      align-items: center;
+      width: 100%;
       margin-bottom: 3rem;
       color: var(--color-Gray);
       font-size: 2rem;
@@ -303,6 +305,12 @@ nav {
         text-align: center;
         font-size: 1.3rem;
         // width: 60vw;
+      }
+      @media screen and (max-width: 375px) {
+        text-align: center;
+        font-size: 2rem;
+        width: 80%;
+        margin: 4rem auto;
       }
     }
     .hero-btn {
@@ -330,6 +338,12 @@ nav {
     .clients img {
       width: 100%;
       object-fit: contain;
+    }
+    @media screen and (max-width: 375px) {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin: 4rem auto;
     }
   }
 
