@@ -325,4 +325,24 @@ nav {
     .clients img {
       width: 100%;
       object-fit: contain;
-   
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+    max-width: 60rem;
+    #hide-item {
+      display: none;
+    }
+    // max-width: 600px;
+  }
+  @media screen and (max-width: 400px) {
+    max-width: 30rem;
+    background: red;
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 50rem;
+    flex-direction: column-reverse;
+  }
+}

@@ -38,4 +38,9 @@ const Hero = () => {
         <div className='banner-img-container'>
           <img src={desktop} alt='' />
         </div>
-   
+      </section>
+    </div>
+  )
+}
+
+export default Hero

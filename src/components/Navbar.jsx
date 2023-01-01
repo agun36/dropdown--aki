@@ -42,18 +42,14 @@ const Navbar = () => {
             onMouseEnter={handleDropDownOpen}
             onMouseLeave={handleDropDownClose}
           >
-            <Link
-              to='/features'
-              className='icon-dropdown text-link'
-              onClick={handleToggle}
-            >
+            <div className='icon-dropdown text-link' onClick={handleToggle}>
               Features
               {open ? (
                 <img src={iconArrow} alt='' />
               ) : (
                 <img src={iconArrowDown} alt='' />
               )}
-            </Link>
+            </div>
             {open ? (
               <ul className='dropdown-menu' onMouseEnter={handleDropDownOpen}>
                 <li className='dropdown-item'>
@@ -76,18 +72,14 @@ const Navbar = () => {
             onMouseEnter={handleDropDownOpen2}
             onMouseLeave={handleDropDownClose2}
           >
-            <Link
-              to='/features'
-              className='icon-dropdown text-link'
-              onClick={handleToggle}
-            >
+            <div className='icon-dropdown text-link' onClick={handleToggle}>
               Company
               {open2 ? (
                 <img src={iconArrow} alt='' />
               ) : (
                 <img src={iconArrowDown} alt='' />
               )}
-            </Link>
+            </div>
             {open2 ? (
               <ul className='dropdown-menu' onMouseEnter={handleDropDownOpen2}>
                 <li className='dropdown-item'>History</li>
