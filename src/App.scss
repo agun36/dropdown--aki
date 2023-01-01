@@ -343,11 +343,11 @@ nav {
     // max-width: 600px;
   }
   @media screen and (max-width: 400px) {
-    max-width: 30rem;
+    max-width: 300px;
     flex-direction: column-reverse;
   }
   @media screen and (max-width: 700px) {
-    max-width: 50rem;
+    max-width: 500px;
     flex-direction: column-reverse;
   }
 }
