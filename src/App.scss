@@ -252,6 +252,11 @@ nav {
       object-fit: contain;
       width: 100%;
     }
+    @media screen and(max-width:600px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   .banner-container_text {
     margin-top: auto;
@@ -328,9 +333,10 @@ nav {
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     flex-direction: column-reverse;
     max-width: 60rem;
+    margin: 12rem;
     #hide-item {
       display: none;
     }
@@ -338,7 +344,6 @@ nav {
   }
   @media screen and (max-width: 400px) {
     max-width: 30rem;
-    background: red;
     flex-direction: column-reverse;
   }
   @media screen and (max-width: 700px) {
